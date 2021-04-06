@@ -1,0 +1,3 @@
+# Original Transformer for Bangla Translation [Work in Progress]
+
+I come from a developing country named Bangladesh. Our mother tongue is Bangla. In this project, my intention is to translate different languages to Bangla. I am fascinated by the transformer architecture and here I plan to implement the whole architecture from scratch using PyTorch. I also have plans to deploy the model after the project. 
