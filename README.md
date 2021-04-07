@@ -22,4 +22,4 @@ However, I would state here that even if the paper title says **attention** is a
 
 The transformer architecture looks like this
 
-<img src = "images/Transformer Architecture.png" width="500" height="600">
+<img src = "images/Transformer Architecture.png">
