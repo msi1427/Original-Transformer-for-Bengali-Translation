@@ -8,7 +8,7 @@ Transformer architecture was first introduced by Vaswani et. al. in [Attention I
 
 - Better long-range dependency modeling.
 - Gets rid of recurrent nets which makes the model highly parallelizable and enables GPU computation.
-- Multihead Attention and Cross Attention.
+- Multi-head Attention.
 
 However, I would state here that even if the paper title says **attention** is all you need. There had to use positional encodings, feed-forwarding layers and label smoothing to make the whole thing work.
 
@@ -20,6 +20,41 @@ However, I would state here that even if the paper title says **attention** is a
 - [Visually intuitive blog and video explanation by Jay Alammar](http://jalammar.github.io/illustrated-transformer/)
 - [Illustrated step by step explanation by Micheal Phi](https://www.youtube.com/watch?v=4Bdc55j80l8) 
 
+I broke down the blocks of the architecture to 5 distinguishing parts to understand as a whole.
+
 The transformer architecture looks like this
 
 <img src = "images/Transformer Architecture.png">
+
+### 1. Input Embeddings
+
+### 2. Positional Encoding
+
+### 3. Encoder Layer
+
+#### 3.1. Multi-head Attention
+
+##### 3.1.1. Self-Attention
+
+#### 3.2. Residual Connection
+
+#### 3.3. Layer Normalization
+
+#### 3.4. Pointwise Feed Forward
+
+### 4. Output Embedding & Positional Encoding
+
+### 5. Decoder Layer
+
+#### 5.1 Multi-head Attention Layer 1
+
+##### 5.1.1. Self-Attention
+
+##### 5.1.2. Look-Ahead Mask
+
+#### 5.2 Multi-head Attention Layer 2 (Cross-attention)
+
+#### 5.3 Residual Connection, Layer Normalization & Pointwise Feed Forward
+
+#### 5.4 Linear Classifier
+
