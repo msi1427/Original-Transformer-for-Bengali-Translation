@@ -12,15 +12,16 @@ Transformer architecture was first introduced by Vaswani et. al. in [Attention I
 
 However, I would state here that even if the paper title says **attention** is all you need. There had to use positional encodings, feed-forwarding layers and label smoothing to make the whole thing work.
 
-## Understanding Transformer
+## Understanding Transformer from theoretical perspective
 
- I used the following resources to understand the paper: <br/>
+ I used the following resources to understand the ins and outs of transformer: <br/>
 
 - [Paper explanation by Yannic Kilcher](https://www.youtube.com/watch?v=iDulhoQ2pro)
 - [Visually intuitive blog and video explanation by Jay Alammar](http://jalammar.github.io/illustrated-transformer/)
 - [Illustrated step by step explanation by Micheal Phi](https://www.youtube.com/watch?v=4Bdc55j80l8) 
+- [Blog post and lecture by Peter Bloem](http://peterbloem.nl/blog/transformers)
 
-I broke down the blocks of the architecture to 5 distinguishing parts to understand as a whole.
+I broke down the blocks of the architecture into **5 distinguishing parts** to understand as a whole.
 
 The transformer architecture looks like this
 
@@ -57,4 +58,13 @@ The transformer architecture looks like this
 #### 5.3 Residual Connection, Layer Normalization & Pointwise Feed Forward
 
 #### 5.4 Linear Classifier
+
+## Implementing transformer from Scratch
+
+I am implementing the original paper from scratch using PyTorch. I am using the following resources to understand the implementation:
+
+- [The Annotated Transformer by Harvard NLP](http://nlp.seas.harvard.edu/2018/04/03/attention.html)
+- [PyTorch official implementation](https://github.com/pytorch/pytorch/blob/187e23397c075ec2f6e89ea75d24371e3fbf9efa/torch/nn/modules/transformer.py) 
+- [Implementation from Scratch by Gordic Aleksa](https://github.com/gordicaleksa/pytorch-original-transformer#hardware-requirements)
+- [Implementation Walkthrough by Aladdin Persson](https://www.youtube.com/playlist?list=PLhhyoLH6Ijfyl_VMCsi54UqGQafGkNOQH)
 
