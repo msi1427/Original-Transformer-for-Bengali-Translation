@@ -21,7 +21,7 @@ However, I would state here that even if the paper title says **attention** is a
 - [Illustrated step by step explanation by Micheal Phi](https://www.youtube.com/watch?v=4Bdc55j80l8) 
 - [Blog post and lecture by Peter Bloem](http://peterbloem.nl/blog/transformers)
 
-I broke down the blocks of the architecture into **5 distinguishing parts** to understand as a whole.
+I broke down the blocks of the architecture into **6 distinguishing parts** to understand as a whole.
 
 The transformer architecture looks like this
 
@@ -31,11 +31,22 @@ The transformer architecture looks like this
 
 ### 2. Positional Encoding
 
-### 3. Encoder Layer
+### 3. Encoder Blocks
 
 #### 3.1. Multi-head Attention
 
 ##### 3.1.1. Self-Attention
+
+Q : queries => the target text to find attention <br/>K : keys => the source text to find attention <br/>V : values => actual values of the text <br/>d_k : dimension of keys <br/>
+
+<img src = "images/SelfAttention.png">
+
+Steps: <br/>
+
+- Multiply Q with K and generate the score. The score determines how much focus to place on other parts of the input sentence as we encode a word at a certain position.
+- Scaling the score. The softmax function can be sensitive to very large input values. These kill the gradient, and slow down learning, or cause it to stop altogether. Since the average value of the dot product grows with the embedding dimension k, it helps to scale the dot product back a little to stop the inputs to the softmax function from growing too large.
+- Get the softmax value of the scaled product. Softmax maximizes the higher scores and depresses the lower scores and normalizes the scores so they’re all positive and add up to 1.
+- Multiply the softmax output with V. The intuition here is to keep intact the values of the word(s) we want to focus on, and drown-out irrelevant words.
 
 #### 3.2. Residual Connection
 
@@ -45,7 +56,7 @@ The transformer architecture looks like this
 
 ### 4. Output Embedding & Positional Encoding
 
-### 5. Decoder Layer
+### 5. Decoder Blocks
 
 #### 5.1 Multi-head Attention Layer 1
 
@@ -57,7 +68,7 @@ The transformer architecture looks like this
 
 #### 5.3 Residual Connection, Layer Normalization & Pointwise Feed Forward
 
-#### 5.4 Linear Classifier
+### 6. Linear Classifier
 
 ## Implementing transformer from Scratch
 
