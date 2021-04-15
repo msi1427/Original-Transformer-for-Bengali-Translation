@@ -35,6 +35,8 @@ The transformer architecture looks like this
 
 #### 3.1. Multi-head Attention
 
+<img src = "images/MultiHeadAttention.png">
+
 ##### 3.1.1. Self-Attention
 
 Q : queries => the target text to find attention <br/>K : keys => the source text to find attention <br/>V : values => actual values of the text <br/>d_k : dimension of keys <br/>
