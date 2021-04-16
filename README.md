@@ -56,13 +56,17 @@ Steps: <br/>
 
 #### 3.4. Pointwise Feed Forward
 
+<img src = "images/Feed Forward Layers.png">
+
 ### 4. Output Embedding & Positional Encoding
 
 ### 5. Decoder Blocks
 
 #### 5.1 Multi-head Attention Layer 1
 
-##### 5.1.1. Self-Attention
+##### 5.1.1. Masked Self-Attention
+
+<img src = "images/Masked SelfAttention.png">
 
 ##### 5.1.2. Look-Ahead Mask
 
