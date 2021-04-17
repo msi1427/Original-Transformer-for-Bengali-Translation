@@ -102,7 +102,7 @@ Same as the Encoder Block but here we need to do masking. While training the dec
 
 ##### 5.1.1. Look-Ahead Mask
 
-<img src = "images/Look-Ahead Mask.png">
+<img src = "images/Look-Ahead Mask.PNG">
 
 After the scaling process, we have an **sequence_length X sequence_length** size of matrix. There we add a Look-Ahead Mask like the picture so that the decoder don't have access to future tokens. 
 
@@ -127,7 +127,5 @@ I am implementing the original paper from scratch using PyTorch. I am using the 
 - [The Annotated Transformer by Harvard NLP](http://nlp.seas.harvard.edu/2018/04/03/attention.html)
 - [PyTorch official implementation](https://github.com/pytorch/pytorch/blob/187e23397c075ec2f6e89ea75d24371e3fbf9efa/torch/nn/modules/transformer.py) 
 - [Implementation from Scratch by Gordic Aleksa](https://github.com/gordicaleksa/pytorch-original-transformer)
-- [Implementation Walkthrough by Aladdin Persson](https://www.youtube.com/playlist?list=PLhhyoLH6Ijfyl_VMCsi54UqGQafGkNOQH)
-
-## Machine Translation using PyTorch Transfomers
+- [Implementation Walkthrough by Aladdin Persson](https://www.youtube.com/playlist?list=PLhhyoLH6Ijfyl_VMCsi54UqGQafGkNOQH) 
 
