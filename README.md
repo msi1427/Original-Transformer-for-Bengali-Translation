@@ -1,6 +1,6 @@
 # Original Transformer for Bengali Translation [Work in Progress]
 
-I come from a developing country named Bangladesh. Our mother tongue is Bengali. In this project, my plan is to translate different languages to Bengali. I am fascinated by transformer architecture and here I also plan to implement the whole architecture from scratch using PyTorch. However, during machine translation, I plan to use PyTorch built-in transformer which is better optimized for use. I also have plans to deploy the model after the project. 
+I come from a developing country named Bangladesh. Our mother tongue is Bengali. In this project, my plan is to translate different languages to Bengali. I am fascinated by transformer architecture. I have implemented the whole architecture from scratch using PyTorch. However, during machine translation, I am using PyTorch built-in transformer which is better optimized for use. I also have plans to deploy the model after the project. 
 
 ## Transformer
 
@@ -96,17 +96,29 @@ Same as Input Embedding & Positional Encoding.
 
 #### 5.1 Masked Multi-head Attention
 
+Same as the Encoder Block but here we need to do masking. While training the decoder, if it knows before training what comes next then the decoder cannot generalize well. So, here we need to mask those terms. How we do that is explained in Look-Ahead Mask Section
+
 <img src = "images/Masked SelfAttention.png">
 
 ##### 5.1.1. Look-Ahead Mask
 
+<img src = "images/Look-Ahead Mask.png">
+
+After the scaling process, we have an **sequence_length X sequence_length** size of matrix. There we add a Look-Ahead Mask like the picture so that the decoder don't have access to future tokens. 
+
+NB: image taken from [Illustrated step by step explanation by Micheal Phi](https://www.youtube.com/watch?v=4Bdc55j80l8) 
+
 #### 5.2 Cross-attention
+
+This is exactly like Encoder Block Multi-head Attention. However, the query (Q) and key(K) come from encoder layer and value (v) come from Decoder Layer.
 
 #### 5.3 Residual Connection, Layer Normalization & Pointwise Feed Forward
 
 Same as Encoder Block.
 
 ### 6. Linear Classifier
+
+There we have a Linear Layer and a Softmax Layer. The output size of equal to the vocab size where the softmax classifier maximizes the probability of the next work to come and depress others. After training, during inference time, we use different decoding techniques like greedy decoding or beam search.
 
 ## Implementing transformer from Scratch
 
@@ -116,4 +128,6 @@ I am implementing the original paper from scratch using PyTorch. I am using the 
 - [PyTorch official implementation](https://github.com/pytorch/pytorch/blob/187e23397c075ec2f6e89ea75d24371e3fbf9efa/torch/nn/modules/transformer.py) 
 - [Implementation from Scratch by Gordic Aleksa](https://github.com/gordicaleksa/pytorch-original-transformer)
 - [Implementation Walkthrough by Aladdin Persson](https://www.youtube.com/playlist?list=PLhhyoLH6Ijfyl_VMCsi54UqGQafGkNOQH)
+
+## Machine Translation using PyTorch Transfomers
 
